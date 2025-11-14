@@ -1,22 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gym Landing Page</title>
     <link rel="stylesheet" href="style.css" />
-    <title>Split Landing Page</title>
-  </head>
-  <body>
-    <main class="container">
-      <section class="split left">
-        <h1>PlayStation 5</h1>
-        <a href="#" class="btn">Buy Now</a>
-      </section>
-      <section class="split right">
-        <h1>Xbox Series X</h1>
-        <a href="#" class="btn">Buy Now</a>
-      </section>
-    </main>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">FIT<span>ZONE</span></div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="btn join-btn">Join Now</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Build Your Body <span>Strong</span></h1>
+            <p>Achieve your fitness goals with professional trainers, modern equipment, and a motivating atmosphere.</p>
+            <button class="btn hero-btn">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Programs -->
+    <section id="programs" class="programs">
+        <h2>Our Programs</h2>
+        <div class="program-grid">
+            <div class="program-card">
+                <h3>Strength Training</h3>
+                <p>Increase muscle mass and improve overall body strength.</p>
+            </div>
+            <div class="program-card">
+                <h3>Cardio Workout</h3>
+                <p>Burn calories and boost your endurance.</p>
+            </div>
+            <div class="program-card">
+                <h3>Yoga & Flexibility</h3>
+                <p>Improve flexibility and reduce stress with guided yoga sessions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <h2>Membership Plans</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Basic</h3>
+                <p class="price">$20 / month</p>
+                <ul>
+                    <li>Gym Access</li>
+                    <li>Locker Room</li>
+                    <li>1 Trainer Session</li>
+                </ul>
+                <button class="btn">Choose Plan</button>
+            </div>
+            <div class="price-card featured">
+                <h3>Premium</h3>
+                <p class="price">$45 / month</p>
+                <ul>
+                    <li>24/7 Access</li>
+                    <li>Unlimited Classes</li>
+                    <li>Personal Trainer</li>
+                </ul>
+                <button class="btn">Choose Plan</button>
+            </div>
+            <div class="price-card">
+                <h3>Pro</h3>
+                <p class="price">$60 / month</p>
+                <ul>
+                    <li>All Premium Features</li>
+                    <li>Diet Plan</li>
+                    <li>Monthly Progress Tracking</li>
+                </ul>
+                <button class="btn">Choose Plan</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Email Address" required />
+            <textarea placeholder="Message" required></textarea>
+            <button class="btn" type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 FitZone Gym. All rights reserved.</p>
+    </footer>
+
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
