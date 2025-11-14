@@ -1,134 +1,136 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --left-bg-color: rgba(87, 84, 236, 0.7);
+  --right-bg-color: rgba(43, 43, 43, 0.8);
+  --left-btn-hover-color: rgba(87, 84, 236, 1);
+  --right-btn-hover-color: rgba(28, 122, 28, 1);
+  --hover-width: 75%;
+  --minimize-width: 25%;
+  --transition-speed: 1s;
+}
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Lato", sans-serif;
-  background-color: #333;
-  color: #222;
-  overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  overflow: hidden;
   margin: 0;
+}
+
+h1 {
+  font-size: 4rem;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.btn {
+  color: #fff;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+  border: #fff solid 0.2rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 15rem;
+  padding: 1.5rem;
+}
+
+.split.left .btn:hover {
+  background-color: var(--left-btn-hover-color);
+  border-color: var(--left-btn-hover-color);
+}
+
+.split.right .btn:hover {
+  background-color: var(--right-btn-hover-color);
+  border-color: var(--right-btn-hover-color);
 }
 
 .container {
-  background-color: #fafafa;
-  transform-origin: top left;
-  transition: transform 0.5s linear;
-  width: 100vw;
-  min-height: 100vh;
-  padding: 50px;
-}
-
-.container.show-nav {
-  transform: rotate(-20deg);
-}
-
-.circle-container {
-  position: fixed;
-  top: -100px;
-  left: -100px;
-}
-
-.circle {
-  background-color: #ff7979;
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
   position: relative;
-  transition: transform 0.5s linear;
+  width: 100%;
+  height: 100%;
+  background: #333;
 }
 
-.circle button {
-  cursor: pointer;
+.split {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 100px;
-  background: transparent;
-  border: 0;
-  font-size: 26px;
-  color: #fff;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
 }
 
-.circle button:focus {
-  outline: none;
-}
-
-.circle button#open {
-  left: 60%;
-}
-
-.circle button#close {
-  top: 60%;
-  transform: rotate(90deg);
-  transform-origin: top left;
-}
-
-.container.show-nav + nav li {
-  transform: translateX(0);
-  transition-delay: 0.3s;
-}
-
-.container.show-nav .circle {
-  transform: rotate(-70deg);
-}
-
-nav {
-  position: fixed;
-  bottom: 40px;
+.split.left {
   left: 0;
-  z-index: 100;
+  background: url("https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&w=1350&q=80")
+    no-repeat center / cover;
 }
 
-nav ul {
-  list-style-type: none;
-  padding-left: 30px;
+.split.left::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color);
 }
 
-nav ul li {
-  text-transform: uppercase;
-  color: #fff;
-  margin: 40px 0;
-  transform: translateX(-100%);
-  transition: transform 0.4s ease-in;
+.split.right {
+  right: 0;
+  background: url("https://images.unsplash.com/photo-1607853827120-6847830b38b0?auto=format&fit=crop&w=1762&q=80")
+    no-repeat center / cover;
 }
 
-nav ul li i {
-  font-size: 20px;
-  margin-right: 10px;
+.split.right::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--right-bg-color);
 }
 
-nav ul li + li {
-  margin-left: 15px;
-  transform: translateX(-150%);
+.split.left,
+.split.right,
+.split.left::before,
+.split.right::before {
+  transition: all var(--transition-speed) ease-in-out;
 }
 
-nav ul li + li + li {
-  margin-left: 30px;
-  transform: translateX(-200%);
+.hover-left .left {
+  width: var(--hover-width);
 }
 
-.content {
-  max-width: 1000px;
-  margin: 50px auto;
+.hover-left .right {
+  width: var(--minimize-width);
 }
 
-.content h1 {
-  margin: 0;
+.hover-right .right {
+  width: var(--hover-width);
 }
 
-.content small {
-  color: #555;
-  font-style: italic;
+.hover-right .left {
+  width: var(--minimize-width);
 }
 
-.content p {
-  color: #333;
-  line-height: 1.5;
-}
-
-.content img {
-  max-width: 100%;
+@media (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+    top: 30%;
+  }
+  .btn {
+    padding: 1.2rem;
+    width: 12rem;
+  }
 }
